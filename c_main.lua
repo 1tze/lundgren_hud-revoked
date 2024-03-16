@@ -39,8 +39,8 @@ Citizen.CreateThread(function()
             local armour = GetPedArmour(player)
 
             if Config.ESX then
-                exports["esx-qalle-hungermechanics"]:GetData("hunger")["current"] / 700000 * 100
-                exports["esx-qalle-hungermechanics"]:GetData("thirst")["current"] / 700000 * 100
+                exports["esx-qalle-foodmechanics"]:GetData("hunger")["current"] / 700000 * 100
+                exports["esx-qalle-foodmechanics"]:GetData("thirst")["current"] / 700000 * 100
             end
 
             SendIfChanged('health', health, lastValues.health)
