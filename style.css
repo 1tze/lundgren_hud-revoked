@@ -57,19 +57,19 @@ i {
     background-color: #546E7A;
 }
 
-.food {
+.hunger {
     background-color: #FFCC8080;
 }
 
-.food .fill {
+.hunger .fill {
     background-color: #FB8C00;
 }
 
-.water {
+.thirst {
     background-color: #90CAF980;
 }
 
-.water .fill {
+.thirst .fill {
     background-color: #1E88E5;
 }
 
