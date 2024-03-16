@@ -11,8 +11,8 @@ end)
 local lastValues = {
     health = -1,
     armour = -1,
-    food = -1,
-    water = -1,
+    hunger = -1,
+    thirst = -1,
     fuel = -1,
     speed = -1,
     isPaused = false
@@ -20,8 +20,8 @@ local lastValues = {
 
 if not Config.ESX then
     RegisterNetEvent('hud:client:UpdateNeeds', function(newHunger, newThirst)
-        food = newHunger
-        water = newThirst
+        hunger = newHunger
+        thirst = newThirst
     end)
 end
 
@@ -39,14 +39,14 @@ Citizen.CreateThread(function()
             local armour = GetPedArmour(player)
 
             if Config.ESX then
-                exports["esx-qalle-foodmechanics"]:GetData("hunger")["current"] / 700000 * 100
-                exports["esx-qalle-foodmechanics"]:GetData("thirst")["current"] / 700000 * 100
+                exports["esx-qalle-hungermechanics"]:GetData("hunger")["current"] / 700000 * 100
+                exports["esx-qalle-hungermechanics"]:GetData("thirst")["current"] / 700000 * 100
             end
 
             SendIfChanged('health', health, lastValues.health)
             SendIfChanged('armour', armour, lastValues.armour)
-            SendIfChanged('food', food, lastValues.food)
-            SendIfChanged('water', water, lastValues.water)
+            SendIfChanged('hunger', hunger, lastValues.hunger)
+            SendIfChanged('thirst', thirst, lastValues.thirst)
         end
         Citizen.Wait(1000)
     end
