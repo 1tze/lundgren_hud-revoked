@@ -18,7 +18,7 @@ window.addEventListener('message', (event) => {
         toggleHudDisplay(true);
     } else if (action === 'hide' && (value || value === 0)) {
         setHudOpacity(value);
-    } else if (['health', 'armour', 'food', 'water'].includes(action) && (value || value === 0)) {
+    } else if (['health', 'armour', 'hunger', 'thirst'].includes(action) && (value || value === 0)) {
         updateStatBar(action, value);
     } else if (action === 'voiceSpeaking') {
         const isSpeaking = event.data.isSpeaking;
