@@ -1,3 +1,7 @@
+local isHudVisible = false
+local hunger = -1
+local thirst = -1
+
 RegisterNUICallback('ready', function(data, callback)
     if data.show then 
         Wait(500)
@@ -39,8 +43,8 @@ Citizen.CreateThread(function()
             local armour = GetPedArmour(player)
 
             if Config.ESX then
-                exports["esx-qalle-foodmechanics"]:GetData("hunger")["current"] / 700000 * 100
-                exports["esx-qalle-foodmechanics"]:GetData("thirst")["current"] / 700000 * 100
+                hunger = exports["esx-qalle-foodmechanics"]:GetData("hunger")["current"] / 700000 * 100
+                thirst = exports["esx-qalle-foodmechanics"]:GetData("thirst")["current"] / 700000 * 100
             end
 
             SendIfChanged('health', health, lastValues.health)
